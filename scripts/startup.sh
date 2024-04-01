@@ -1,0 +1,2 @@
+cd routing_table_raptor
+streamlit run routing_table_raptor.py
