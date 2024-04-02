@@ -30,9 +30,6 @@ RUN echo "==> Install jq.." \
 RUN echo "==> Install streamlit.." \
   && pip install streamlit --upgrade
 
-RUN echo "==> Adding umap ..." \
-  && pip install umap-learn
-
 RUN echo "==> Adding pandas ..." \
   && pip install pandas
 
@@ -45,8 +42,9 @@ RUN echo "==> Adding networkx ..." \
 RUN echo "==> Adding pyvis ..." \
   && pip install pyvis
 
-RUN echo "==> Adding Fast Embeddings ..." \
-  && pip install --upgrade --quiet  fastembed
+RUN echo "==> Adding InstructorEmbedding ..." \
+  && pip install -U sentence-transformers==2.2.2 \
+  && pip install InstructorEmbedding
 
 COPY /routing_table_raptor /routing_table_raptor/
 COPY /scripts /scripts/
